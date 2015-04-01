@@ -1,0 +1,92 @@
+{
+	"posts": [
+		{
+			"title":  "Hairy Insights: A UX Perspective",
+	        "description": "UX design is a craft of patience and intuitive decisions based on insights. What can our hair teach us about UX?",
+	        "url": "https://medium.com/re-write/hairy-insights-a-ux-perspective-b49c2d53dbbd",
+	        "guid": "1", 
+	        "categories": ["hair","ux","design"],  
+	        "author": "Joe Toscano",  
+	        "date": "January 17, 2015",
+	        "content": "",
+	        "pictures": ""
+       },
+       {
+			"title":  "Oh Sherpa, my Sherpa",
+	        "description": "A discussion on how augmented reality can be used to create a useful, usable and compelling on mountain experience.",
+	        "url": "https://medium.com/re-write/oh-sherpa-my-sherpa-a61737380a83",
+	        "guid": "2", 
+	        "categories": ["tech", "ux", "design"],  
+	        "author": "Joe Toscano",  
+	        "date": "January 24, 2015",
+	        "content": "",
+	        "pictures": ""
+       },
+       {
+			"title":  "How to Team",
+	        "description": "When a great team comes together it’s one of the most beautiful things you’ll ever be a part of, and that’s why it’s so rare.",
+	        "url": "https://medium.com/re-write/how-to-team-ee7ab2d8160e",
+	        "guid": "3", 
+	        "categories": ["teamwork","psychology","motivation"],  
+	        "author": "Joe Toscano",  
+	        "date": "January 30, 2015",
+	        "content": "",
+	        "pictures": ""
+       },
+       {
+			"title":  "Let It Be",
+	        "description": "When I find myself in times of trouble Mother Mary comes to me, Speaking words of wisdom, let it be, let it be",
+	        "url": "https://medium.com/re-write/let-it-be-e57a22a8c863",
+	        "guid": "4", 
+	        "categories": ["opinion","work","philosophy"],  
+	        "author": "Joe Toscano",  
+	        "date": "February 7, 2015",
+	        "content": "",
+	        "pictures": ""
+       },
+       {
+			"title":  "3D Printing Will Cause an Industrial Revolution",
+	        "description": "I know it sounds like a completely outrageous statement, I know, but you’ll believe it in a second.",
+	        "url": "https://medium.com/re-write/3d-printing-will-cause-an-industrial-revolution-8494c571ba75",
+	        "guid": "5", 
+	        "categories": ["3d printing","tech","product design"],  
+	        "author": "Joe Toscano",  
+	        "date": "February 19, 2015",
+	        "content": "",
+	        "pictures": ""
+       },
+       {
+			"title":  "The End of Writing is Near",
+	        "description": "We’re becoming so advanced we’re regressing",
+	        "url": "https://medium.com/re-write/the-end-of-writing-is-near-cfe67a9bd090",
+	        "guid": "6", 
+	        "categories": ["tech","internet","culture"],  
+	        "author": "Joe Toscano",  
+	        "date": "February 28, 2015",
+	        "content": "",
+	        "pictures": ""
+       },
+       {
+			"title":  "Product Design is the new form of Leadership",
+	        "description": "As a leader it is our job to enable. I believe the same mindset should apply when creating a product.",
+	        "url": "https://medium.com/re-write/product-design-is-the-new-form-of-leadership-77368a535038",
+	        "guid": "7", 
+	        "categories": ["tech","ux","food"],  
+	        "author": "Joe Toscano",  
+	        "date": "March 10, 2015",
+	        "content": "",
+	        "pictures": ""
+       },
+       {
+			"title":  "I need a Spiff",
+	        "description": "Our hope in creating this application is that we will create a community without users knowing they’re creating it for us.",
+	        "url": "https://medium.com/@realjoet/i-need-a-spiff-38afd67fe421",
+	        "guid": "8", 
+	        "categories": ["tech","ux","design"],  
+	        "author": "Joe Toscano",  
+	        "date": "March 11, 2015",
+	        "content": "",
+	        "pictures": ""
+       },
+	]
+}
