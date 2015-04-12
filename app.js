@@ -1,9 +1,7 @@
-
-
 var express = require('express'),
-  config = require('./config/config'),
-  glob = require('glob'),
-  mongoose = require('mongoose');
+	config = require('./config/config'),
+	glob = require('glob'),
+	mongoose = require('mongoose');
 
 mongoose.connect(config.db);
 var db = mongoose.connection;
@@ -16,6 +14,8 @@ models.forEach(function (model) {
   require(model);
 });
 var app = express();
+
+
 
 require('./config/express')(app, config);
 

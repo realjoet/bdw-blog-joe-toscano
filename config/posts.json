@@ -7,7 +7,8 @@
 	        "guid": "1", 
 	        "categories": ["hair","ux","design"],  
 	        "author": "Joe Toscano",  
-	        "date": "January 17, 2015",
+	        "createdAt": "January 17, 2015",
+	        "updatedAt": "",
 	        "content": "",
 	        "pictures": ""
        },
@@ -18,7 +19,8 @@
 	        "guid": "2", 
 	        "categories": ["tech", "ux", "design"],  
 	        "author": "Joe Toscano",  
-	        "date": "January 24, 2015",
+	        "createdAt": "January 24, 2015",
+	        "updatedAt": "",
 	        "content": "",
 	        "pictures": ""
        },
@@ -29,7 +31,8 @@
 	        "guid": "3", 
 	        "categories": ["teamwork","psychology","motivation"],  
 	        "author": "Joe Toscano",  
-	        "date": "January 30, 2015",
+	        "createdAt": "January 30, 2015",
+	        "updatedAt": "",
 	        "content": "",
 	        "pictures": ""
        },
@@ -40,7 +43,8 @@
 	        "guid": "4", 
 	        "categories": ["opinion","work","philosophy"],  
 	        "author": "Joe Toscano",  
-	        "date": "February 7, 2015",
+	        "createdAt": "February 7, 2015",
+	        "updatedAt": "",
 	        "content": "",
 	        "pictures": ""
        },
@@ -51,7 +55,8 @@
 	        "guid": "5", 
 	        "categories": ["3d printing","tech","product design"],  
 	        "author": "Joe Toscano",  
-	        "date": "February 19, 2015",
+	        "createdAt": "February 19, 2015",
+	        "updatedAt": "",
 	        "content": "",
 	        "pictures": ""
        },
@@ -62,7 +67,8 @@
 	        "guid": "6", 
 	        "categories": ["tech","internet","culture"],  
 	        "author": "Joe Toscano",  
-	        "date": "February 28, 2015",
+	        "createdAt": "February 28, 2015",
+	        "updatedAt": "",
 	        "content": "",
 	        "pictures": ""
        },
@@ -73,8 +79,9 @@
 	        "guid": "7", 
 	        "categories": ["tech","ux","food"],  
 	        "author": "Joe Toscano",  
-	        "date": "March 10, 2015",
-	        "content": "",
+	        "createdAt": "March 10, 2015",
+			"updatedAt": "",
+			"content": "",
 	        "pictures": ""
        },
        {
@@ -84,9 +91,10 @@
 	        "guid": "8", 
 	        "categories": ["tech","ux","design"],  
 	        "author": "Joe Toscano",  
-	        "date": "March 11, 2015",
-	        "content": "",
+	        "createdAt": "March 11, 2015",
+			"updatedAt": "",        
+			"content": "",
 	        "pictures": ""
-       },
+       }
 	]
 }
