@@ -3,7 +3,8 @@ var express = require('express'),
   router = express.Router(),
   mongoose = require('mongoose'),
   Article = mongoose.model('Article'),
-  posts = require('../../config/posts');
+  posts = require('../../config/posts'),
+  guid = Article.guid;
 
 
 module.exports = function (app) {
@@ -31,20 +32,20 @@ router.get('/', function (req, res, next) {
 
 });
 
-router.get('/:guid', function (req, res, next) {
+router.get('/:id', function (req, res, next) {
 
   //find all articles in the MongoDB
-  Article.find(guid, function(err, articles){
+  Article.findById(req.params.id, function(err, articles){
 
-    console.log('description: ', articles.description);
+    console.log('description: ', req.params.id);
 
     //throw error
-    if(err) return next(err);
+    if (err) return next(err);
 
     //render = HTML, send = JSON
     res.render('article/show', {
-      title: 'My Articles',
-      articles: posts
+      title: 'Article',
+      articles: articles
     });
 
   });
