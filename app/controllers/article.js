@@ -6,12 +6,12 @@ var express = require('express'),
   posts = require('../../config/posts'),
   guid = Article.guid;
 
-
 module.exports = function (app) {
   app.use('/article', router);
 };
 
 //controllers
+//localhost:3000/article
 router.get('/', function (req, res, next) {
 
   //find all articles in the MongoDB
@@ -32,29 +32,87 @@ router.get('/', function (req, res, next) {
 
 });
 
+//localhost:3000/article/1 - view article
 router.get('/:id', function (req, res, next) {
+  var id = req.params.id;
 
   //find all articles in the MongoDB
-  Article.findById(req.params.id, function(err, articles){
+  Article.findOne({_id: id}, function (err, article){
 
-    console.log('description: ', req.params.id);
-
-    //throw error
-    if (err) return next(err);
+    console.log('description: ', id);
 
     //render = HTML, send = JSON
     res.render('article/show', {
       title: 'Article',
-      articles: articles
+      article: article
     });
 
   });
 
 });
 
-//EXAMPLES
-//localhost:3000/article
 //localhost:3000/article/1/edit - edit article view
-//localhost:3000/article/1/create - update article by id
-//localhost:3000/article/1 - view article
-//localhost:3000/article/list - list articles
+router.get('/:id/edit', function (req, res, next) {
+  var id = req.params.id;
+
+  //find all articles in the MongoDB
+  Article.findOne({_id: id}, function (err, article){
+
+    console.log('description: ', id);
+
+    //render = HTML, send = JSON
+    res.render('article/edit', {
+      title: 'Article',
+      article: article
+    });
+
+  });
+
+});
+
+///localhost:3000/article/1/create - update article by id
+// router.get('/:id/create', function (req, res, next) {
+
+//   //find all articles in the MongoDB
+//   Article.findById(req.params.id, function(err, articles){
+
+//     console.log('description: ', req.params.id);
+
+//     //throw error
+//     if (err) return next(err);
+
+//     //render = HTML, send = JSON
+//     res.render('article/create', {
+//       title: 'Article',
+//       articles: articles
+//     });
+
+//   });
+
+// });
+
+//Update blog post
+router.post('/:id', function (req, res, next){
+  var id = req.params.id;
+  console.log(req.body);
+
+  Article.findOneAndUpdate({_id:id}), req.body, function(err, article){
+    console.log(article);
+    if(err) return next(err);
+
+    res.render('back');
+  }
+});
+
+//Pushing articles to server
+router.get('/bootstrap', function (req, res, next){
+  Article.create(posts.posts, function (err, articles){
+    if(err) return next(err);
+    res.send(articles);
+  })
+})
+
+
+
+
+
