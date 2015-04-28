@@ -4,6 +4,7 @@
   <h1>{{ title }}</h1>
   <p>Welcome to {{ title }}</p>
 
+	<a class="button button-primary" href="/article/create">Create New Article</a>
 	{% if articles.length > 0 %}
 		{% for article in articles %}
 			<a href="/article/{{ article.id }}" target="_blank"><h2>{{article.title}}</h2></a>

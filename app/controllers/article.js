@@ -10,8 +10,11 @@ module.exports = function (app) {
   app.use('/article', router);
 };
 
-//controllers
-//localhost:3000/article
+
+// !GLOBAL ROUTES -----------------------------
+// --------------------------------------------
+
+//localhost:3000/article - SEE LIST OF ARTICLES
 router.get('/', function (req, res, next) {
 
   //find all articles in the MongoDB
@@ -32,7 +35,15 @@ router.get('/', function (req, res, next) {
 
 });
 
-//localhost:3000/article/1 - view article
+
+
+
+
+
+// ! ARTICLE ROUTES ---------------------
+// --------------------------------------------
+
+//localhost:3000/article/1 - VIEW ARTICLE
 router.get('/:id', function (req, res, next) {
   var id = req.params.id;
 
@@ -51,7 +62,7 @@ router.get('/:id', function (req, res, next) {
 
 });
 
-//localhost:3000/article/1/edit - edit article view
+//localhost:3000/article/1/edit - VIEW TO EDIT ARTICLE
 router.get('/:id/edit', function (req, res, next) {
   var id = req.params.id;
 
@@ -70,30 +81,10 @@ router.get('/:id/edit', function (req, res, next) {
 
 });
 
-///localhost:3000/article/1/create - update article by id
-// router.get('/:id/create', function (req, res, next) {
-
-//   //find all articles in the MongoDB
-//   Article.findById(req.params.id, function(err, articles){
-
-//     console.log('description: ', req.params.id);
-
-//     //throw error
-//     if (err) return next(err);
-
-//     //render = HTML, send = JSON
-//     res.render('article/create', {
-//       title: 'Article',
-//       articles: articles
-//     });
-
-//   });
-
-// });
-
-//Update blog post
+//localhost:3000/article/id - UPDATES ARTICLE
 router.post('/:id', function (req, res, next){
   var id = req.params.id;
+  
   console.log(req.body);
 
   Article.findOneAndUpdate({_id:id}), req.body, function(err, article){
@@ -103,6 +94,47 @@ router.post('/:id', function (req, res, next){
     res.render('back');
   }
 });
+
+
+
+
+
+// !CREATE ARTICLE ROUTES ---------------------
+// --------------------------------------------
+
+//Route to create post page
+router.get('/create', function (req, res, next) {
+  res.render('article/create', {
+    title: 'Create New Article',
+    article: article,
+  });
+});
+
+//Route to post new article
+router.post('/list', function(req, res, next) {
+    Article.find({}, function(err, articles){
+
+    console.log('articles: ', articles);
+
+    //throw error
+    if(err) return next(err);
+
+    //render = HTML, send = JSON
+    res.render('article/list', {
+      title: 'Articles',
+      articles: articles //return all articles to the list.swig file
+    });
+
+  });
+});
+
+
+
+
+
+
+// !PUSH TO HEROKU DB ---------------------
+// --------------------------------------------
 
 //Pushing articles to server
 router.get('/bootstrap', function (req, res, next){
