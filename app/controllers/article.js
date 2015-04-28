@@ -11,6 +11,26 @@ module.exports = function (app) {
 };
 
 
+// !CREATE ARTICLE ROUTES ---------------------
+// --------------------------------------------
+
+//Route to create post page
+router.get('/create', function (req, res, next) {
+    res.render('article/create', {
+      title: 'Create New Article'
+    });
+});
+
+
+//Route to post new article
+router.post('/create', function(req, res, next) {
+    //render = HTML, send = JSON
+    Article.create(req.body, function (err, articles){
+      res.redirect('/article');
+    });
+});
+
+
 // !GLOBAL ROUTES -----------------------------
 // --------------------------------------------
 
@@ -73,60 +93,30 @@ router.get('/:id/edit', function (req, res, next) {
 
     //render = HTML, send = JSON
     res.render('article/edit', {
-      title: 'Article',
+      title: 'BDW-Blog',
       article: article
     });
-
   });
-
 });
+
 
 //localhost:3000/article/id - UPDATES ARTICLE
 router.post('/:id', function (req, res, next){
-  var id = req.params.id;
   
+  var id = req.params.id;
   console.log(req.body);
 
-  Article.findOneAndUpdate({_id:id}), req.body, function(err, article){
+  Article.findOneAndUpdate({_id:id}, req.body, function(err, article){
     console.log(article);
     if(err) return next(err);
 
-    res.render('back');
-  }
-});
-
-
-
-
-
-// !CREATE ARTICLE ROUTES ---------------------
-// --------------------------------------------
-
-//Route to create post page
-router.get('/create', function (req, res, next) {
-  res.render('article/create', {
-    title: 'Create New Article',
-    article: article,
+    res.redirect('back');
   });
 });
 
-//Route to post new article
-router.post('/list', function(req, res, next) {
-    Article.find({}, function(err, articles){
 
-    console.log('articles: ', articles);
 
-    //throw error
-    if(err) return next(err);
 
-    //render = HTML, send = JSON
-    res.render('article/list', {
-      title: 'Articles',
-      articles: articles //return all articles to the list.swig file
-    });
-
-  });
-});
 
 
 
@@ -143,8 +133,6 @@ router.get('/bootstrap', function (req, res, next){
     res.send(articles);
   })
 })
-
-
 
 
 
